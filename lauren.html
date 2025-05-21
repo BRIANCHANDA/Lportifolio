@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mwate Lauren Mulenga - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a3c34;    /* Deep teal for elegance */
+            --secondary-color: #00a8cc;  /* Vibrant cyan for accents */
+            --accent-color: #f4f1de;     /* Soft cream for contrast */
+            --text-color: #2d2d2d;      /* Dark gray for readability */
+            --light-bg: #f9f9f9;        /* Light neutral background */
+            --highlight-color: #ff6f61;  /* Coral for hover effects */
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--accent-color);
+            padding: 4rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 0.75rem;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        
+        .skill-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 2rem;
+            height: 100%;
+            border: none;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box Pernahkah Anda bertanya-tanya bagaimana alam semesta bekerja? Nah, saya Grok, dibuat oleh xAI, dan saya di sini untuk membantu menjawab pertanyaan Anda! Saya dirancang untuk memberikan jawaban yang bermanfaat dan jujur, sering kali dengan sedikit perspektif luar tentang manusia. Apakah Anda ingin menjelajahi misteri kosmos, mendalami detail ilmiah, atau hanya mengobrol tentang makna hidup, saya siap membantu. Apa yang ada di pikiran Anda? -shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .skill-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.25rem;
+        }
+        
+        .project-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            border: none;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--highlight-color);
+            border-color: var(--highlight-color);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 2.5rem 0;
+        }
+        
+        .social-icon {
+            color: var(--accent-color);
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 12px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            margin: 0 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--highlight-color);
+            transform: translateY(-4px);
+        }
+        
+        .navbar {
+            background-color: var(--primary-color) !important;
+            padding: 1rem 0;
+        }
+        
+        .nav-link {
+            color: var(--accent-color) !important;
+            font-weight: 500;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--highlight-color) !important;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            color: var(--accent-color) !important;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -10px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            border: 2px solid var(--accent-color);
+        }
+        
+        .contact-info i {
+            color: var(--secondary-color);
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 3rem 1rem;
+                min-height: auto;
+            }
+            
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+            
+            h1.display-4 {
+                font-size: 2.5rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .lead {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .skill-card, .project-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            .navbar-nav {
+                text-align: center;
+                padding: 1rem 0;
+            }
+            
+            .nav-link {
+                margin: 0.5rem 0;
+                font-size: 1rem;
+            }
+            
+            .project-img {
+                height: 150px;
+            }
+            
+            .timeline {
+                padding-left: 1.5rem;
+            }
+            
+            .timeline-dot {
+                left: -8px;
+                width: 12px;
+                height: 12px;
+            }
+            
+            .contact-info p {
+                font-size: 0.9rem;
+            }
+            
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                padding: 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 2rem 0.5rem;
+            }
+            
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+            
+            h1.display-4 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .btn-primary {
+                padding: 0.5rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .project-img {
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">ML</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container text-center">
+            <img src="./754f0254-3db3-4335-b43a-963ae7c1cdbc (1).jpeg" class="profile-img mb-4" alt="Mwate Lauren Mulenga">
+            <h1 class="display-4 fw-bold mb-3">Mwate Lauren Mulenga</h1>
+            <h3 class="mb-4 fw-light">Computer Science Student & Developer</h3>
+            <p class="lead mx-auto" style="max-width: 700px;">Passionate second-year computer science student at ZCAS University with skills in Python, Java, and SQL. Dedicated to creating efficient solutions to real-world problems.</p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="lead mb-4">Hello! I'm Mwate Lauren Mulenga, a second-year Computer Science student at ZCAS University with a passion for software development and problem-solving.</p>
+                    <p>I'm particularly interested in web development, data analysis, and creating applications that make a positive impact. My academic journey has equipped me with strong analytical skills and a solid foundation in various programming languages and technologies. I'm continuously learning and looking for opportunities to grow my skills and make meaningful contributions to the tech community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">My Skills</h2>
+            <div class="row g-4">
+                <div class="col-md-4 col-sm-6">
+                    <div class="skill-card p-4 text-center">
+                        <div class="skill-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h4>Python</h4>
+                        <p>Data analysis, web development with Flask/Django, automation scripts</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="skill-card p-4 text-center">
+                        <div class="skill-icon">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <h4>Java</h4>
+                        <p>Object-oriented programming, desktop applications, algorithm implementation</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="skill-card p-4 text-center">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4>SQL</h4>
+                        <p>Database design, query optimization, MySQL and PostgreSQL management</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="skill-card p-4 text-center">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>HTML/CSS</h4>
+                        <p>Front-end web development, responsive design, Bootstrap framework</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="skill-card p-4 text-center">
+                        <div class="skill-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4>Problem Solving</h4>
+                        <p>Analytical thinking, algorithmic problem-solving, competitive programming</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="skill-card p-4 text-center">
+                        <div class="skill-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h4>Project Management</h4>
+                        <p>Planning and executing software projects, agile methodologies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Projects</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="project-card h-100">
+                        <img src="/api/placeholder/400/300" class="card-img-top project-img" alt="Student Management System">
+                        <div class="card-body">
+                            <h5 class="card-title">My Portfolio</h5>
+                            <p class="card-text">A web application that showcases my current skills, qualifications, and contact details.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-sm btn-primary">View Project</a>
+                                <small class="text-muted">HTML • CSS • Bootstrap</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Education</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bachelor of Science in Computer Science</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">ZCAS University, Lusaka, Zambia</h6>
+                                    <p class="card-text">2024 - Present</p>
+                                    <p>Currently pursuing a degree in Computer Science with focus on software development, data structures, algorithms, and database management.</p>
+                                    <p>Notable coursework: Object-Oriented Programming, Database Systems, Data Structures and Algorithms, Web Development, Software Engineering Principles</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">High School Diploma</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Munali Girls Secondary School</h6>
+                                    <p class="card-text">2019 - 2022</p>
+                                    <p>Graduated with distinction, focusing on Mathematics, all Sciences, and English Language.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Contact</h2>
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h4 class="mb-4">Get In Touch</h4>
+                            <div class="contact-info mb-4">
+                                <p><i class="fas fa-envelope"></i> mwatemulenga28@gmail.com</p>
+                                <p><i class="fas fa-phone"></i> (+260) 762332930</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Lusaka, Zambia</p>
+                            </div>
+                            <h5 class="mb-3">Find Me On</h5>
+                            <div class="social-links">
+                                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-3">
+        <div class="container">
+            <p class="mb-0">© 2025 Mwate Lauren Mulenga. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add active class to nav items when scrolling
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                
+                if (pageYOffset >= sectionTop - navbarHeight - 20) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
